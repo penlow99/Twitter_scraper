@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="interface container">
+    <div class="row">
+        <div class="col-sm">
+            <form>
+                <fieldset disabled>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="{{email}}" name="email">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" value="{{password}}" name="password">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputSearch">Search</label>
+                    <input type="text" class="form-control" id="inputSearch" placeholder="{{search}}" name="search">
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="selectTweetLimit">Tweet Limit</label>
+                        <select class="custom-select mr-sm-2" id="selectTweetLimit" name="tweet_limit">
+                            <option selected value="{{tweet_limit}}">{{tweet_limit}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="selectSleepTime">Sleep Time (in seconds)</label>
+                        <select class="custom-select mr-sm-2" id="selectSleepTime" name="sleep_time">
+                            <option selected value="{{sleep_time}}">{{sleep_time}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                    </div>
+                </div>
+                </fieldset>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <button type="submit" value="submit" class="btn btn-primary">Scrape Again</button>
+                    </div>
+                    <div class="form-group col-md-4"></div>
+                    <div class="form-group col-md-4"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}>

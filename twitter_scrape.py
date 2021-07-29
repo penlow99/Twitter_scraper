@@ -21,6 +21,7 @@ tweet_set = set()
 
 # this function will parse out the tweet content and store it in a list (of lists)
 def parse_tweets(tweet):
+    # if there is no timestamp, then it is a "Promoted" tweet and we don't want it
     try:
         datetime = tweet.find_element_by_xpath('.//time').get_attribute('datetime')
     except NoSuchElementException:
@@ -98,5 +99,3 @@ while len(content_list) <= tweet_limit:
 
 print(content_list)
 
-
-# dont forget to quit driver

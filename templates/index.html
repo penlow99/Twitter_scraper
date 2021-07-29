@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <div class="interface container">
+        <div class="row">
+            <div class="col-sm">
+                <form method="POST" action="/scrape">
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputSearch">Search</label>
+                        <input type="text" class="form-control" id="inputSearch" placeholder="Search term or hashtag" name="search">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="selectTweetLimit">Tweet Limit</label>
+                            <select class="custom-select mr-sm-2" id="selectTweetLimit" name="tweet_limit">
+                                <option selected value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="selectSleepTime">Sleep Time (in seconds)</label>
+                            <select class="custom-select mr-sm-2" id="selectSleepTime" name="sleep_time">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <button type="submit" value="submit" class="btn btn-primary">Scrape</button>
+                        </div>
+                        <div class="form-group col-md-4"></div>
+                        <div class="form-group col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}>
