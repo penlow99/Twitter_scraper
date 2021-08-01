@@ -37,15 +37,37 @@
                     </div>
                 </div>
                 </fieldset>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <button type="submit" value="submit" class="btn btn-primary">Scrape Again</button>
-                    </div>
-                    <div class="form-group col-md-4"></div>
-                    <div class="form-group col-md-4"></div>
-                </div>
             </form>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <button onClick="exportCSV();" class="btn btn-primary">Export to CSV</button>
+                    <button onClick="location.href = '/index'" class="btn btn-primary">New Scrape</button>
+                </div>
+                <div class="form-group col-md-4">
+                    
+                </div>
+                <div class="form-group col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    {{data_html|safe}}
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="row" style="display: none;">
+        <div class="col-sm">
+            <div class="panel-body">
+                <div class="table-responsive" id="content_csv">
+                    {{data_csv}}
+                </div>
+            </div>    
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
 {% endblock %}>
