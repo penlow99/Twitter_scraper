@@ -15,17 +15,15 @@ tweet_set = set()
 
 def main(email, password, search, tweet_limit, sleep_time):
     # This block is for heroku deployment, special thanks to Michael Browne, article @ https://medium.com/@mikelcbrowne/running-chromedriver-with-python-selenium-on-heroku-acc1566d161c
-    # GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-    # CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
-    chrome_options = Options()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_PATH')
-    driver = webdriver.Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), chrome_options=chrome_options)
+    # chrome_options = Options()
+    # chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--disable-gpu')
+    # chrome_options.add_argument('--no-sandbox')
+    # chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_PATH')
+    # driver = webdriver.Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), chrome_options=chrome_options)
     
     # For local deployment, uncomment out line below and comment out block above, place chromedriver.exe in same directory
-    # driver = webdriver.Chrome(executable_path="chromedriver")
+    driver = webdriver.Chrome(executable_path="chromedriver")
     
     # open browser, go to twitter, and login
     start_twitter(email, password, search, sleep_time, driver)
