@@ -45,6 +45,7 @@ def parse_tweets(tweet):
     except StaleElementReferenceException:
         return
     
+    # if "id" not in set, then add tweet to list and "id" to the set
     if not (u_name+datetime) in tweet_set :
         content_list.append([u_name, handle, datetime, comment, original_content, replies, retweets, likes])
         tweet_set.add(u_name+datetime)

@@ -4,7 +4,8 @@
     <div class="interface container">
         <div class="row">
             <div class="col-sm">
-                <form method="POST" action="/scrape">
+                <form method="POST" action="/scrape" onsubmit="disableFieldset()" >
+                    <fieldset id="fieldset1">
                     <div class="form-row">
                       <div class="form-group col-md-4">
                         <label for="inputEmail">Email</label>
@@ -21,7 +22,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="selectTweetLimit">Tweet Limit</label>
+                            <label for="selectTweetLimit">Tweet Limit (approx.)</label>
                             <select class="custom-select mr-sm-2" id="selectTweetLimit" name="tweet_limit">
                                 <option selected value="50">50</option>
                                 <option value="100">100</option>
@@ -55,10 +56,17 @@
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4"></div>
                     </div>
+                    </fieldset>
                 </form>
             </div>
         </div>
-        
+        <div class="row" id="scrapeMessage" style="display: none;">
+            <div class="col-sm">
+                <br/>
+                <p>Scraping in progess...this may take several minutes to complete.</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
     </div>
 
 {% endblock %}>
